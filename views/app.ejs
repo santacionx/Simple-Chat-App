@@ -1,0 +1,35 @@
+<%- include("includes/head.ejs")%>
+<body class="bg-gradient-to-br from-pink-500 to-purple-500 text-gray-900 font-sans">
+    <h1 class="text-3xl font-bold text-center my-8 text-white-500">Chat Inbox</h1>
+    <form action="/chat/new" method="get" class="flex justify-center mb-4">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-md ">New Chat</button>
+    </form>
+    <div class="max-w-2xl mx-auto">
+        <% for(let chat1 of chatt) { %>
+        <div class="bg-white rounded-xl shadow-md mb-8 transition-transform transform hover:scale-105">
+            <div class="p-4">
+                <p class="text-sm font-semibold">From: <span class="text-blue-500"><%= chat1.from %></span></p>
+                <p class="text-sm font-semibold">To: <span class="text-blue-500"><%= chat1.to %></span></p>
+                <div class="mt-4 flex justify-end">
+                    <div class="bg-gray-200 text-gray-800 p-3 rounded-lg">
+                        <p class="text-sm"><%= chat1.msg %></p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                    <form action="/chat/<%= chat1._id %>/edit" method="get">
+                        <button class="text-sm text-blue-500 hover:text-blue-700">Edit</button>
+                    </form>
+                    <form action="/chat/<%= chat1._id %>?_method=DELETE" method="post">
+                        <button class="text-sm text-red-500 hover:text-red-700">Delete</button>
+                    </form>
+                    <div class="flex text-sm text-gray-500">
+                        <p><%= chat1.created_at.toString().split(" ")[4] %></p>
+                        <p><%= chat1.created_at.toString().split(" ").splice(0, 4).join(" ") %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</body>
+</html>
