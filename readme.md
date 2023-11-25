@@ -3,11 +3,6 @@
 ## Description
 This repository contains a basic chat application built using MongoDB for data storage and Express for handling CRUD operations. The app allows users to send and manage chat messages between different users.
 
-![home](home.png)
-![edit](edit.png)
-![new](newchat.png)
-
-
 ## Dependencies
 - **ejs**: "^3.1.9"
 - **express**: "^4.18.2"
@@ -46,3 +41,7 @@ The project structure is organized as follows:
 - `views/`: Contains EJS templates for rendering views.
 - `app.js`: Main entry point for the Express application.
 - `init.js`: data entry to db.
+## Screenshots
+![home](home.png)
+![edit](edit.png)
+![new](newchat.png)
