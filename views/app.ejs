@@ -22,6 +22,9 @@
                     <form action="/chat/<%= chat1._id %>?_method=DELETE" method="post">
                         <button class="text-sm text-red-500 hover:text-red-700">Delete</button>
                     </form>
+                    <form action="/chat/<%= chat1._id %>" method="get">
+                        <button class="text-sm text-red-500 hover:text-red-700">show</button>
+                    </form>
                     <div class="flex text-sm text-gray-500">
                         <p><%= chat1.created_at.toString().split(" ")[4] %></p>
                         <p><%= chat1.created_at.toString().split(" ").splice(0, 4).join(" ") %></p>

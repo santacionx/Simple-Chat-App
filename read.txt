@@ -1,0 +1,7 @@
+wrapasync: return type: func param:func
+function wraparync(function){
+    return function(req,res,next){
+       // exec param
+       function(req,res,catch).catch(err)
+    }
+}
