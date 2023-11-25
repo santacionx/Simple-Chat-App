@@ -5,3 +5,7 @@ function wraparync(function){
        function(req,res,catch).catch(err)
     }
 }
+
+mongoose error
+validation error
+cast error
